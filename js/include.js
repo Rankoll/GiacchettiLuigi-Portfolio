@@ -1,4 +1,3 @@
-window.onload= loader();
 $(function loader() {
     var includes = $('[data-include]')
     $.each(includes, function () {
