@@ -3,16 +3,18 @@
 <head>
     <script src="js/jquery.js"></script>
     <script src="js/include.js"></script>
+
     <link rel="icon" href="img/icon.ico">
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <title>Giacchetti Luigi</title>
 </head>
-<body onload="loader()">
+<body onload="includer()">
     <div data-include="header"></div>
     <div id="main-content">
-
+        <canvas id="dot-connect" onload="starter()"></canvas>
     </div>
     <div data-include="footer"></div>
 </body>
+<script src="js/background.js"></script>
 </html>
