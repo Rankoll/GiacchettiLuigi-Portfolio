@@ -8,50 +8,14 @@ body {
 }
 
 a {
-    background: linear-gradient(to left, #525DFF, #FF08B9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bolder;
-    font-size: 2.6rem;
+    text-decoration: none;
 }
+
 /*Background color*/
 canvas {
     background: linear-gradient(to left, #525DFF, 55%, #FF08B9);
     width: 100%;
     padding: 0;
-}
-
-#header-container, #footer-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    padding: 0.5rem 0;
-    background-color: #161616;
-}
-
-#header-container {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    height: 5rem;
-}
-
-#header-container a {
-    display: inline-block;
-    text-align: center;
-    margin: auto 0;
-    width: 12rem;
-}
-
-#header-container a:hover {
-    
-}
-
-#footer-container {
-    display: flex;
-    height: 15rem;
-    left: 0;
-    bottom: 0;
 }
 
 #main-content {
