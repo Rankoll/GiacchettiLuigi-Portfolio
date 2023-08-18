@@ -3,6 +3,8 @@ can_w = parseInt(canvas.getAttribute('width')),
 can_h = parseInt(canvas.getAttribute('height')),
 ctx = canvas.getContext('2d');
 
+var ball_count;
+
 var ball = {
     x: 0,
     y: 0,
@@ -23,7 +25,7 @@ var ball = {
     alpha_phase = 0,
 
     // Line
-    link_line_width = 0.8,
+    link_line_width = 1,
     dis_limit = 390,
     add_mouse_point = true,
     mouse_in = false,
@@ -129,7 +131,7 @@ function updateBalls() {
         b.x += b.vx;
         b.y += b.vy;
 
-        if (b.x > -(50) && b.x < (can_w + 50) && b.y > -(50) && b.y < (can_h + 50)) {
+        if (b.x > -(ball_count) && b.x < (can_w + ball_count) && b.y > -(ball_count) && b.y < (can_h + ball_count)) {
             new_balls.push(b);
         }
 
@@ -190,7 +192,7 @@ function getDisOf(b1, b2) {
 
 // add balls if there a little balls
 function addBallIfy() {
-    if (balls.length < 100) {
+    if (balls.length < ball_count) {
         balls.push(getRandomBall());
     }
 }
@@ -233,6 +235,8 @@ function initCanvas() {
 
     can_w = parseInt(canvas.getAttribute('width'));
     can_h = parseInt(canvas.getAttribute('height'));
+
+    ball_count = parseInt((can_w * can_h) / 19200);
 }
 window.addEventListener('resize', function (e) {
     initCanvas();
@@ -240,7 +244,7 @@ window.addEventListener('resize', function (e) {
 // Starting function
 function goMovie() {
     initCanvas();
-    initBalls(90);
+    initBalls(ball_count);
     window.requestAnimationFrame(render);
 }
 goMovie();

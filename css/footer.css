@@ -1,0 +1,150 @@
+#footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 25rem;
+    padding: 0.5rem 0;
+    background-color: #161616;
+}
+
+h3 {
+    color: white;
+    font-size: 2.6rem;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+a {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 1rem auto;
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    font-size: 2.2rem;
+}
+
+input {
+    width: 7rem;
+    height: 2rem;
+    margin: 1rem 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.2rem;
+    font-family: Garamond;
+    background: linear-gradient(to left, #525DFF, 55%, #FF08B9);
+    border: none;
+    border-radius: 0.5rem;
+    border: 2px solid white;
+}
+
+textarea {
+    width: 80%;
+    margin: 0 10%;
+    resize: none;
+    font-size: 1rem;
+    font-family: Garamond;
+    font-weight: bold;
+    border-radius: 0.2rem;
+    padding: 0;
+    border-width: 0;
+}
+
+/* unvisited link */
+a:link {
+    color: #525DFF;
+}
+  
+/* visited link */
+a:visited {
+    color: #525DFF;
+}
+  
+/* mouse over link */
+a:hover {
+    color: #FF08B9;
+}
+  
+/* selected link */
+a:active {
+    color: #525DFF;
+}
+
+.col {
+    height: 23rem;
+    width: 100%;
+}
+
+#bars {
+    border-right: 4px solid white;
+    border-left: 4px solid white;
+}
+
+#social {
+    width: 24.5rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#social img {
+    width: 7rem;
+    filter: invert(50%) sepia(59%) saturate(7471%) hue-rotate(227deg) brightness(100%) contrast(103%);
+    transition: all .2s ease-in-out;
+}
+
+#social a {
+    padding: 0.5rem;
+}
+
+#social img:hover {
+    filter: invert(21%) sepia(55%) saturate(6751%) hue-rotate(305deg) brightness(101%) contrast(112%);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1200px) {
+    #footer-container {
+        flex-wrap: wrap;
+        height: 42rem;
+    }
+
+    #bars {
+        border-right: none;
+    }
+
+    .col {
+        height: 18rem;
+        flex-basis: 45%;
+    }
+
+    #social {
+        width: auto;
+        flex-wrap: nowrap;
+    }
+
+    input {
+        margin: 1rem 0 1rem 50%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .col {
+        flex-basis: 100%;
+    }
+
+    #footer-container {
+        height: 54rem;
+    }
+
+    #links {
+        height: auto;
+    }
+
+    #bars {
+        border-left: none;
+    }
+}
