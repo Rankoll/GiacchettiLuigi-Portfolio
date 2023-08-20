@@ -28,29 +28,44 @@ a:hover {
     font-size: 2.2rem;
 }
 
+p {
+    font-family: Garamond;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5rem;
+    width: 100%;
+}
+
 input {
     width: 7rem;
     height: 2rem;
-    margin: 1rem 50%;
-    transform: translate(-50%, 0);
+    margin: 1rem;
     font-size: 1.2rem;
     font-family: Garamond;
+    font-weight: bold;
     background: linear-gradient(to left, #525DFF, 55%, #FF08B9);
     border: none;
     border-radius: 0.5rem;
-    border: 2px solid white;
+    border: 2px solid black;
+    outline: 1px solid white;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 textarea {
-    width: 80%;
+    width: -webkit-fill-available;
     margin: 0 10%;
     resize: none;
     font-size: 1rem;
     font-family: Garamond;
     font-weight: bold;
     border-radius: 0.2rem;
-    padding: 0;
-    border-width: 0;
+    padding: 5px;
 }
 
 /* unvisited link */
@@ -92,7 +107,7 @@ a:active {
 }
 
 #social img {
-    width: 7rem;
+    width: 6rem;
     filter: invert(50%) sepia(59%) saturate(7471%) hue-rotate(227deg) brightness(100%) contrast(103%);
     transition: all .2s ease-in-out;
 }
@@ -125,10 +140,6 @@ a:active {
         width: auto;
         flex-wrap: nowrap;
     }
-
-    input {
-        margin: 1rem 0 1rem 50%;
-    }
 }
 
 @media screen and (max-width: 960px) {
@@ -146,5 +157,11 @@ a:active {
 
     #bars {
         border-left: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #social img {
+        width: 5rem;
     }
 }
