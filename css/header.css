@@ -6,9 +6,8 @@
     height: 5rem;
     padding: 0.5rem 0;
     background-color: #161616;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    position: fixed;
+    z-index: 9999;
 }
 
 #header-container a {
