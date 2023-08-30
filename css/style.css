@@ -149,79 +149,41 @@ canvas {
 }
 
 @media screen and (max-width: 1100px) {
-    #spacer {
-        width: 22rem;
+    
+    #highlight-icon {
+        position: unset;
+        margin: 0 auto;
     }
 
+    #spacer {
+        width: 0;
+    }
+
+    #text {
+        padding: 0 1rem 2rem 1rem;
+    }
+
+    #text h2 {
+        margin: 1rem auto;
+    }
+    
     #text p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 0;
+    }
+    
+    .triangle-up, .triangle-down {
+        display: none;
     }
 
     #info {
-        display: flex;
-        width: 75%;
-        height: 18rem;
+        width: 80%;
+        height: auto;
+        border-radius: 0;
+        margin: 1rem 10%
     }
 
-    #highlight-icon {
-        width: 26rem;
-        height: 26rem;
-    }
-
-    #photo {
-        transform: translate(15%,15%);
-        width: 20rem;
-    }
-    
-    .triangle-up {
-        border-bottom: 9rem solid transparent;
-    }
-
-    .triangle-down {
-        border-top: 9rem solid transparent;
-    }
-
-    .triangle-down, .triangle-up {
-        top: -23rem;
-    }
-    @media screen and (max-width: 950px) {
-
-
-        #highlight-icon {
-            position: unset;
-            margin: 0 auto;
-        }
-
-        #spacer {
-            width: 0;
-        }
-
-        #text {
-            padding: 0 1rem 2rem 1rem;
-        }
-
-        #text h2 {
-            margin: 1rem auto;
-        }
-        
-        #text p {
-            font-size: 1.2rem;
-            padding: 0;
-        }
-        
-        .triangle-up, .triangle-down {
-            display: none;
-        }
-
-        #info {
-            width: 80%;
-            height: auto;
-            border-radius: 0;
-            margin: 1rem 10%
-        }
-
-        #about-me {
-            top: 15%;
-        }
+    #about-me {
+        top: 15%;
     }
 }
