@@ -28,7 +28,7 @@ a:hover {
     font-size: 2.2rem;
 }
 
-p {
+p, form p {
     font-family: Garamond;
     color: white;
     font-weight: bold;
@@ -121,7 +121,7 @@ a:active {
     transform: scale(1.1);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1350px) {
     #footer-container {
         flex-wrap: wrap;
         height: 42rem;
@@ -142,7 +142,7 @@ a:active {
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1100px) {
     .col {
         flex-basis: 100%;
     }
@@ -160,7 +160,7 @@ a:active {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     #social img {
         width: 5rem;
     }
