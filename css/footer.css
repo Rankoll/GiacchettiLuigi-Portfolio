@@ -8,14 +8,14 @@
     background-color: #161616;
 }
 
-h3 {
+#footer-container h3 {
     color: white;
     font-size: 2.6rem;
     text-align: center;
     margin: 1rem 0 1rem 0;
 }
 
-a {
+#footer-container a {
     display: block;
     font-size: 2rem;
     text-align: center;
@@ -24,7 +24,7 @@ a {
     transition: all .2s ease-in-out;
 }
 
-a:hover {
+#footer-container a:hover {
     font-size: 2.2rem;
 }
 
@@ -69,22 +69,22 @@ textarea {
 }
 
 /* unvisited link */
-a:link {
+#footer-container a:link {
     color: #525DFF;
 }
   
 /* visited link */
-a:visited {
+#footer-container a:visited {
     color: #525DFF;
 }
   
 /* mouse over link */
-a:hover {
+#footer-container a:hover {
     color: #FF08B9;
 }
   
 /* selected link */
-a:active {
+#footer-container a:active {
     color: #525DFF;
 }
 
