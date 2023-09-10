@@ -12,8 +12,8 @@
 <body onload="includer()">
     <div data-include="header"></div>
     <div id="main-content">
-        <canvas id="dot-connect" onload="starter()"></canvas>
-        <div id="about-me">
+        <canvas id="dot-connect"></canvas>
+        <div id="about-me-container">
             <div id="highlight-icon"><img id="photo" src="img/icon.ico"></div>
             <div id="info">
                 <div id="spacer"></div>
@@ -34,8 +34,155 @@
             <div class="divider-top"></div>
             <div class="divider-bottom"></div>
         </div>
-        <div id="skills">
-
+        <div id="skills-container">
+            <div id="skills">
+                <h2>Skills</h2>
+                <div class="flex-wrap">
+                    <div id="hard-skills">
+                        <div class="hard-element">
+                            <img src="img/skills/hard/html.svg">
+                            <p>HTML</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/css.svg">
+                            <p>CSS</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/javascript.svg">
+                            <p>Javascript</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/java.svg">
+                            <p>Java</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/c++.svg">
+                            <p>C++</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/csharp.svg">
+                            <p>C#</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/latex.svg">
+                            <p>LaTeX</p>
+                        </div>
+                        <div class="hard-element">
+                            <img src="img/skills/hard/mysql.svg">
+                            <p>MySQL</p>
+                        </div>
+                    </div>
+                    <div id="soft-skills">
+                        <div class="soft-element">
+                            <img src="img/skills/soft/team working.svg">
+                            <p>Teamwork</p>
+                        </div>
+                        <div class="soft-element">
+                            <img src="img/skills/soft/time-management.svg">
+                            <p>Time Management</p>
+                        </div>
+                        <div class="soft-element">
+                            <img src="img/skills/soft/problem-solving.svg">
+                            <p>Problem Solving</p>
+                        </div>
+                        <div class="soft-element">
+                            <img src="img/skills/soft/design-thinking.svg">
+                            <p>Design Thinking</p>
+                        </div>
+                        <div class="soft-element">
+                            <img src="img/skills/soft/lateral-thinking.svg">
+                            <p>Lateral Thinking</p>
+                        </div>
+                        <div class="soft-element">
+                            <img src="img/skills/soft/personal-branding.svg">
+                            <p>Personal Branding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bar">
+            <div class="divider-top flip"></div>
+            <div class="divider-bottom flip"></div>
+        </div>
+        <div id="projects-container">
+            <div id="projects">
+                <h2>Progetti</h2>
+                <div class="project-item">
+                    <a href="https://github.com/YoRHa-2G/YoRHa-2G" target="_blank">
+                        <img src="img/projects/YoRHa-2G.png">
+                    </a>
+                    <div class="details">
+                        <p>Data svolgimento:</p>
+                        <p>2022</p>
+                        <p><a href="https://yorha-2g.github.io/YoRHa-2G/" target="_blank"><img src="img/link.svg"></a></p>
+                    </div>
+                    <div class="description">
+                        <h3>YoRHa-2G</h3>
+                        <p>
+                            Primo lavoro di commissione per la costruzione di un Portfolio per un amico. 
+                            Particolarmente importante poiché svilupparlo mi ha dato la consapevolezza 
+                            di riuscire a soddisfare i gusti e le richieste di un cliente oltre che a 
+                            rispettare le scadenze.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/GennaroCecco/iTeam" target="_blank">
+                        <img src="img/projects/iTeam.png">
+                    </a>
+                    <div class="details">
+                        <p>Data svolgimento:</p>
+                        <p>2022</p>
+                        <p><a href="https://github.com/GennaroCecco/iTeam" target="_blank"><img src="img/link.svg"></a></p>
+                    </div>
+                    <div class="description">
+                        <h3>iTeam</h3>
+                        <p>
+                            Nato come progetto per il corso di Fondamenti di Intelligenza Artificiale, 
+                            il suo scopo è quello di creare un'intelligenza artificiale capace di formare 
+                            team di dipendenti sulla base dei requisiti del progetto. Esso è stato costruito 
+                            sulle fondamenta di Agency Formation ed è stato svolto insieme ad altri 3 colleghi.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/SystemFormation/AgencyFormation" target="_blank">
+                        <img src="img/projects/Agency-Formation.png">
+                    </a>
+                    <div class="details">
+                        <p>Data svolgimento:</p>
+                        <p>2021</p>
+                        <p><a href="https://github.com/SystemFormation/AgencyFormation" target="_blank"><img src="img/link.svg"></a></p>
+                    </div>
+                    <div class="description">
+                        <h3>Agency Formation</h3>
+                        <p>Un progetto che ha preso vita grazie al corso di Ingegneria del Software, 
+                            iniziato insieme a ben altri 8 colleghi tra cui 2 project manager della magistrale.
+                            AgencyFormation è un sistema per la gestione del reclutamento e della relativa 
+                            formazione dei dipendenti all'interno dell'azienda AF Consulting.</p>
+                    </div>
+                </div>
+                <div class="project-item" id="borderless">
+                    <a href="https://github.com/GennaroCecco/ProgettoTSW2021" target="_blank">
+                        <img src="img/projects/PCWorld.png">
+                    </a>
+                    <div class="details">
+                        <p>Data svolgimento:</p>
+                        <p>2021</p>
+                        <p><a href="https://github.com/GennaroCecco/ProgettoTSW2021" target="_blank"><img src="img/link.svg"></a></p>
+                    </div>
+                    <div class="description">
+                        <h3>PCWorld</h3>
+                        <p>Il primo sito web a cui ho lavorato insieme ad altri due colleghi per il progetto di 
+                            Tecnologie Software per il Web. Esso consiste in un E-commerce che ti permette
+                            di comprare componenti del PC con gestione commenti sui prodotti. 
+                            Inoltre è presente la gestione del carrello ed è disponibile la gestione dei prodotti 
+                            tramite amministratore.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div data-include="footer"></div>
