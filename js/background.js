@@ -6,14 +6,14 @@ canW = parseInt(canvas.getAttribute('width')),
 canH = parseInt(canvas.getAttribute('height')),
 ctx = canvas.getContext('2d');
 
-// Settings to make the balls' speed based also to the screen size
+// Settings to make the balls' speed change based also on the screen size
 const ballSpeed = 1.8; // Lower values mean more probability to get faster balls
 const availScreenWidth  = window.screen.availWidth;
 const availScreenHeight = window.screen.availHeight;
 const availScreenRatio = (availScreenWidth / availScreenHeight) / ballSpeed;
 
-// 
-const ballsDensity = 19200;
+// Setting to make the balls count change based on the canvas size
+const ballsDensity = 19200; // Higher values mean less balls
 var ballCount;
 
 var ball = {
