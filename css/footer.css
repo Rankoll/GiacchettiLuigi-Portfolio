@@ -195,6 +195,7 @@ textarea {
 
     #footer-container {
         height: 60rem;
+        padding: .5rem 0;
     }
 
     #bars {

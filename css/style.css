@@ -331,6 +331,10 @@ canvas {
     #text p {
         font-size: 1.35rem;
     }
+
+    .description p {
+        font-size: 1.35rem;
+    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -341,11 +345,19 @@ canvas {
     #skills-container {
         height: 60rem;
     }
-}
-
-@media screen and (max-width: 1250px) {
+    
     #text p {
         font-size: 1.2rem;
+    }
+
+    .description p {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #text p {
+        font-size: 1.1rem;
     }
 }
 
@@ -393,6 +405,16 @@ canvas {
 
     #about-me {
         top: 15%;
+    }
+
+    #photo {
+        width: 19rem;
+    }
+
+    #highlight-icon {
+        width: 25rem;
+        height: auto;
+        aspect-ratio: 1/1;
     }
 
     .project-item {

@@ -223,7 +223,7 @@ function initBalls(num) {
 // Init Canvas
 function initCanvas() {
     canvas.setAttribute('width', window.innerWidth);
-    canvas.setAttribute('height', window.screen.availHeight);
+    canvas.setAttribute('height', window.innerHeight);
 
     canW = parseInt(canvas.getAttribute('width'));
     canH = parseInt(canvas.getAttribute('height'));
