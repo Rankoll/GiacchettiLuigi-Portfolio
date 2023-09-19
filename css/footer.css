@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 25rem;
-    padding: 0.5rem 0;
+    padding: 1.5rem 0;
     background-color: #161616;
 }
 
@@ -15,7 +15,7 @@
     margin: 1rem 0 1rem 0;
 }
 
-#footer-container a {
+#links a {
     display: block;
     font-size: 2rem;
     text-align: center;
@@ -49,6 +49,18 @@ input {
     border-radius: 0.5rem;
     border: 2px solid black;
     outline: 1px solid white;
+}
+
+input:hover {
+    opacity: .7;
+    transition: all .15s ease-in-out;
+    transform: scale(1.1);
+}
+
+input:active {
+    border: none;
+    outline: none;
+    transition: all .15s ease-in-out;
 }
 
 form {
@@ -100,10 +112,17 @@ textarea {
 
 #social {
     width: 24.5rem;
+    height: 19rem;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: space-between;
+}
+
+#social h4 {
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 #social img {
@@ -114,11 +133,29 @@ textarea {
 
 #social a {
     padding: 0.5rem;
+    margin: 0 !important;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    width: 7rem;
+    margin: 0 auto 1rem auto;
+    transition: all .2s ease-in-out;
 }
 
 #social img:hover {
     filter: invert(21%) sepia(55%) saturate(6751%) hue-rotate(305deg) brightness(101%) contrast(112%);
+}
+
+#social a:hover {
     transform: scale(1.1);
+}
+
+#social a:hover img {
+    filter: invert(21%) sepia(55%) saturate(6751%) hue-rotate(305deg) brightness(101%) contrast(112%);
+}
+
+.pindown {
+    height: 10rem;
 }
 
 @media screen and (max-width: 1350px) {
@@ -132,13 +169,22 @@ textarea {
     }
 
     .col {
-        height: 18rem;
+        height: 20rem;
         flex-basis: 45%;
     }
 
     #social {
         width: auto;
+        height: auto;
         flex-wrap: nowrap;
+    }
+
+    #social img {
+        width: 10rem;
+    }
+
+    #social a {
+        width: 11rem;
     }
 }
 
@@ -148,20 +194,28 @@ textarea {
     }
 
     #footer-container {
-        height: 54rem;
-    }
-
-    #links {
-        height: auto;
+        height: 60rem;
     }
 
     #bars {
         border-left: none;
     }
+    
+    #social img {
+        width: 7.5rem;
+    }
+
+    #social a {
+        width: 8.5rem;
+    }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     #social img {
-        width: 5rem;
+        width: 6rem;
+    }
+
+    #social a {
+        width: 7rem;
     }
 }

@@ -1,10 +1,20 @@
-var canvas = document.getElementById('dot-connect'),
-can_w = parseInt(canvas.getAttribute('width')),
-can_h = parseInt(canvas.getAttribute('height')),
-ctx = canvas.getContext('2d'),
-ball_per_pixel_area = 19200;
+// Thanks to Mai Thành Duy An for the base of the script
 
-var ball_count;
+// Getting canvas' attributes
+var canvas = document.getElementById('dot-connect'),
+canW = parseInt(canvas.getAttribute('width')),
+canH = parseInt(canvas.getAttribute('height')),
+ctx = canvas.getContext('2d');
+
+// Settings to make the balls' speed change based also on the screen size
+const ballSpeed = 1.8; // Lower values mean more probability to get faster balls
+const availScreenWidth  = window.screen.availWidth;
+const availScreenHeight = window.screen.availHeight;
+const availScreenRatio = (availScreenWidth / availScreenHeight) / ballSpeed;
+
+// Setting to make the balls count change based on the canvas size
+const ballsDensity = 19200; // Higher values mean less balls
+var ballCount;
 
 var ball = {
     x: 0,
@@ -14,7 +24,7 @@ var ball = {
     r: 0,
     phase: 0
 },
-ball_color = {
+ballColor = {
     r: 9,
     g: 9,
     b: 9
@@ -23,13 +33,13 @@ R = 4,
 balls = [],
 
 // Line
-link_line_width = 1,
-dis_limit = 390;
+linkLineWidth = 1,
+disLimit = 390;
 
 // Random speed
 function getRandomSpeed(pos) {
-    var min = -0.3,
-        max = 0.3;
+    var min = -0.3 * availScreenRatio,
+        max = 0.3 * availScreenRatio;
     switch (pos) {
         case 'top':
             return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
@@ -66,7 +76,7 @@ function getRandomBall() {
     switch (pos) {
         case 'top':
             return {
-                x: randomSidePos(can_w),
+                x: randomSidePos(canW),
                 y: -R,
                 vx: getRandomSpeed('top')[0],
                 vy: getRandomSpeed('top')[1],
@@ -76,8 +86,8 @@ function getRandomBall() {
             }
         case 'right':
             return {
-                x: can_w + R,
-                y: randomSidePos(can_h),
+                x: canW + R,
+                y: randomSidePos(canH),
                 vx: getRandomSpeed('right')[0],
                 vy: getRandomSpeed('right')[1],
                 r: R,
@@ -86,8 +96,8 @@ function getRandomBall() {
             }
         case 'bottom':
             return {
-                x: randomSidePos(can_w),
-                y: can_h + R,
+                x: randomSidePos(canW),
+                y: canH + R,
                 vx: getRandomSpeed('bottom')[0],
                 vy: getRandomSpeed('bottom')[1],
                 r: R,
@@ -97,7 +107,7 @@ function getRandomBall() {
         case 'left':
             return {
                 x: -R,
-                y: randomSidePos(can_h),
+                y: randomSidePos(canH),
                 vx: getRandomSpeed('left')[0],
                 vy: getRandomSpeed('left')[1],
                 r: R,
@@ -117,7 +127,7 @@ function randomSidePos(length) {
 function renderBalls() {
     Array.prototype.forEach.call(balls, function (b) {
         if (!b.hasOwnProperty('type')) {
-            ctx.fillStyle = 'rgb(' + ball_color.r + ',' + ball_color.g + ',' + ball_color.b + ')';
+            ctx.fillStyle = 'rgb(' + ballColor.r + ',' + ballColor.g + ',' + ballColor.b + ')';
             ctx.beginPath();
             ctx.arc(b.x, b.y, R, 0, Math.PI * 2, true);
             ctx.closePath();
@@ -128,17 +138,17 @@ function renderBalls() {
 
 // Update balls
 function updateBalls() {
-    var new_balls = [];
+    var newBalls = [];
     Array.prototype.forEach.call(balls, function (b) {
         b.x += b.vx;
         b.y += b.vy;
 
-        if (b.x > -(ball_count) && b.x < (can_w + ball_count) && b.y > -(ball_count) && b.y < (can_h + ball_count)) {
-            new_balls.push(b);
+        if (b.x > -(ballCount) && b.x < (canW + ballCount) && b.y > -(ballCount) && b.y < (canW + ballCount)) {
+            newBalls.push(b);
         }
     });
 
-    balls = new_balls.slice(0);
+    balls = newBalls.slice(0);
 }
 
 // Draw lines
@@ -147,13 +157,13 @@ function renderLines() {
     for (var i = 0; i < balls.length; i++) {
         for (var j = i + 1; j < balls.length; j++) {
 
-            fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+            fraction = getDisOf(balls[i], balls[j]) / disLimit;
 
             if (fraction < 1) {
                 alpha = (1 - fraction).toString();
 
                 ctx.strokeStyle = 'rgba(9,9,9,' + alpha + ')';
-                ctx.lineWidth = link_line_width;
+                ctx.lineWidth = linkLineWidth;
 
                 ctx.beginPath();
                 ctx.moveTo(balls[i].x, balls[i].y);
@@ -167,22 +177,22 @@ function renderLines() {
 
 // Calculate distance between two points
 function getDisOf(b1, b2) {
-    var delta_x = Math.abs(b1.x - b2.x),
-        delta_y = Math.abs(b1.y - b2.y);
+    var deltaX = Math.abs(b1.x - b2.x),
+        deltaY = Math.abs(b1.y - b2.y);
 
-    return Math.sqrt(delta_x * delta_x + delta_y * delta_y);
+    return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
 // Add balls if there are little balls
 function addBallIfy() {
-    if (balls.length < ball_count) {
+    if (balls.length < ballCount) {
         balls.push(getRandomBall());
     }
 }
 
 // Render
 function render() {
-    ctx.clearRect(0, 0, can_w, can_h);
+    ctx.clearRect(0, 0, canW, canH);
 
     renderBalls();
 
@@ -199,8 +209,8 @@ function render() {
 function initBalls(num) {
     for (var i = 1; i <= num; i++) {
         balls.push({
-            x: randomSidePos(can_w),
-            y: randomSidePos(can_h),
+            x: randomSidePos(canW),
+            y: randomSidePos(canH),
             vx: getRandomSpeed(randomPos())[0],
             vy: getRandomSpeed(randomPos())[1],
             r: R,
@@ -213,12 +223,12 @@ function initBalls(num) {
 // Init Canvas
 function initCanvas() {
     canvas.setAttribute('width', window.innerWidth);
-    canvas.setAttribute('height', window.innerHeight);
+    canvas.setAttribute('height', window.screen.availHeight);
 
-    can_w = parseInt(canvas.getAttribute('width'));
-    can_h = parseInt(canvas.getAttribute('height'));
+    canW = parseInt(canvas.getAttribute('width'));
+    canH = parseInt(canvas.getAttribute('height'));
 
-    ball_count = parseInt((can_w * can_h) / ball_per_pixel_area);
+    ballCount = parseInt((canW * canH) / ballsDensity);
 }
 
 // Resize window listener
@@ -229,7 +239,7 @@ window.addEventListener('resize', function (e) {
 // Starting function
 function goMovie() {
     initCanvas();
-    initBalls(ball_count);
+    initBalls(ballCount);
     window.requestAnimationFrame(render);
 }
 

@@ -16,7 +16,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bolder;
-    font-size: 2.8rem;
+    font-size: 3rem;
     display: inline-block;
     text-align: center;
     margin: auto 0;
@@ -25,5 +25,5 @@
 }
 
 #header-container a:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
