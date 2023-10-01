@@ -2,9 +2,9 @@
 
 // Getting canvas' attributes
 var canvas = document.getElementById('dot-connect'),
-canW = parseInt(canvas.getAttribute('width')),
-canH = parseInt(canvas.getAttribute('height')),
-ctx = canvas.getContext('2d');
+ctx = canvas.getContext('2d'),
+canW,
+canH;
 
 // Settings to make the balls' speed change based also on the screen size
 const ballSpeed = 1.8; // Lower values mean more probability to get faster balls
@@ -223,7 +223,7 @@ function initBalls(num) {
 // Init Canvas
 function initCanvas() {
     canvas.setAttribute('width', window.innerWidth);
-    canvas.setAttribute('height', window.innerHeight);
+    canvas.setAttribute('height', window.screen.availHeight);
 
     canW = parseInt(canvas.getAttribute('width'));
     canH = parseInt(canvas.getAttribute('height'));
@@ -240,7 +240,9 @@ window.addEventListener('resize', function (e) {
 function goMovie() {
     initCanvas();
     initBalls(ballCount);
-    window.requestAnimationFrame(render);
+    window.requestAnimationFrame(render);   /* with requestAnimationFrame there's no need to deal with 
+                                            memory consumptions as it auto-pauses so there's no need 
+                                            to use an Intersection Observer */
 }
 
 goMovie();
