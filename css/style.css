@@ -15,6 +15,7 @@ a {
 h2 {
     width: fit-content;
     height: fit-content;
+    color: #161616;
     border-bottom: 2px solid #161616;
     margin: 1rem 0;
     padding: 0.2rem;
@@ -48,7 +49,7 @@ body::-webkit-scrollbar-thumb:hover {
 canvas {
     background: linear-gradient(to left, #525DFF, 55%, #FF08B9);
     width: 100%;
-    min-height: 57rem;
+    min-height: 1080px;
     margin-top: 7rem;
     padding: 0;
 }
@@ -87,7 +88,7 @@ canvas {
 
 #about-me-container {
     position: absolute;
-    top: 25%;
+    top: 25vh;
     width: 100%;
     height: 32rem;
 }
@@ -97,7 +98,7 @@ canvas {
     width: 24rem;
     border-radius: 50%;
     border: 0.2rem solid transparent;
-    box-shadow: 0 0 20px 5px #FF08B9;
+    box-shadow: 0 0 20px 5px #525DFF;
 }
 
 .triangle-down, .triangle-up {
@@ -135,7 +136,7 @@ canvas {
     width: fit-content;
     padding: 0 2rem 0 0.2rem;
     font-size: 1.5rem;
-    color: black;
+    color: #161616;
     margin: 0;
     text-align: initial;
 }
@@ -158,7 +159,7 @@ canvas {
 
 .divider-top {
     width: 100%;
-    background: url('../img/wave.png');
+    background: url('../img/wave/wave.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 6.5rem;
@@ -168,7 +169,7 @@ canvas {
 
 .divider-bottom {
     width: 100%;
-    background: url('../img/backwards-wave.png');
+    background: url('../img/wave/backwards-wave.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 6.5rem;
@@ -321,8 +322,22 @@ canvas {
     margin: 0 auto;
 }
 
+.details a {
+    width: fit-content;
+    margin: 0 auto;
+    transition: all .2s ease-in-out;                                           
+}
+
+.details a:hover {
+    transform: scale(1.1);
+}
+
+.details img:hover {
+    filter: invert(21%) sepia(55%) saturate(6751%) hue-rotate(305deg) brightness(101%) contrast(112%);
+}
+
 #pcworld {
-    border: 2px black solid;
+    border: 2px #161616 solid;
 }
 
 /* Responsiveness */
@@ -340,10 +355,6 @@ canvas {
 @media screen and (max-width: 1300px) {
     .hard-element, .soft-element {
         flex-basis: 47%;
-    }
-
-    #skills-container {
-        height: 60rem;
     }
     
     #text p {
@@ -367,7 +378,7 @@ canvas {
     }
 
     #about-me-container {
-        top: 15%;
+        top: 15vh;
     }
 
     #highlight-icon {
@@ -397,7 +408,7 @@ canvas {
     }
 
     #info {
-        width: 85%;
+        width: 85vw;
         height: auto;
         border-radius: 0;
         margin: 1rem 7.5%;

@@ -1,4 +1,4 @@
-// Imported library
+// Library from fireart.studio
 
 !function() {
     var s, i, c, a, o = {

@@ -47,8 +47,9 @@ input {
     background: linear-gradient(to left, #525DFF, 55%, #FF08B9);
     border: none;
     border-radius: 0.5rem;
-    border: 2px solid black;
+    border: 2px solid #161616;
     outline: 1px solid white;
+    box-shadow: 5px 12px 4px rgba(0,0,0,.25);
 }
 
 input:hover {
@@ -78,6 +79,7 @@ textarea {
     font-weight: bold;
     border-radius: 0.2rem;
     padding: 5px;
+    box-shadow: 5px 12px 4px rgba(0,0,0,.25);
 }
 
 /* unvisited link */
@@ -218,5 +220,15 @@ textarea {
 
     #social a {
         width: 7rem;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    #social img {
+        width: 5rem;
+    }
+
+    #social a {
+        width: 6rem;
     }
 }
