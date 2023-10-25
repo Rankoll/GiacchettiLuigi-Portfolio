@@ -138,7 +138,7 @@ canvas {
     font-size: 1.5rem;
     color: #161616;
     margin: 0;
-    text-align: initial;
+    text-align: justify;
 }
 
 /* Decorations */
@@ -188,6 +188,21 @@ canvas {
 
 /* Skills */
 
+#skills h3 {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#skill-types {
+    display: flex;
+    flex-direction: row;
+}
+
 #skills-container {
     display: flex;
     width: 100%;
@@ -213,11 +228,12 @@ canvas {
     width: 7rem;
 }
 
-#skills {
+#skills, #projects {
     width: 80%;
     margin: 5% 10%;
     padding-bottom: 2rem;
     background-color: white;
+    border: black 2px solid;
     box-shadow: 5px 12px 4px rgba(0,0,0,.25)
 }
 
@@ -239,6 +255,11 @@ canvas {
     align-items: center;
     flex-basis: 33.333333%;
     margin: 1rem 0;
+    transition: all .2s ease-in-out;                                           
+}
+
+.hard-element:hover, .soft-element:hover {
+    transform: scale(1.1);
 }
 
 #soft-skills {
@@ -253,14 +274,6 @@ canvas {
     padding-top: 8rem;
     padding-bottom: 8rem;
     background: linear-gradient(180deg, #525dff 0%, #FF08B9 100%);
-}
-
-#projects {
-    width: 80%;
-    margin: 5% 10%;
-    padding-bottom: 2rem;
-    background-color: white;
-    box-shadow: 5px 12px 4px rgba(0,0,0,.25);
 }
 
 #projects h2 {
@@ -303,7 +316,8 @@ canvas {
 }
 
 .description p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    text-align: justify;
 }
 
 .details {
@@ -428,6 +442,10 @@ canvas {
         aspect-ratio: 1/1;
     }
 
+    .hard-element:hover, .soft-element:hover {
+        transform: none;
+    }
+
     .project-item {
         flex-direction: column;
         align-items: center;
@@ -441,16 +459,29 @@ canvas {
         padding-top: 0;
     }
 
-    .details {
+    .details p {
         display: none;
     }
 
-    .details p {
-        display: inline-block;
+    .details img {
+        width: 4.5rem;
+        position: absolute;
+        opacity: 0.5;
+        transform: translate(6.5rem, -4rem);
     }
+
+    .details a:hover {
+        transform: none;
+    }
+    
+    .details img:hover {
+        filter: none;
+    }
+    
 
     .description p {
         font-size: 1.5rem;
+        text-align: center;
         margin-bottom: 1rem;
     }
 
