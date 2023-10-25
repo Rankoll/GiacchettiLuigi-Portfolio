@@ -71,7 +71,7 @@ form {
 }
 
 textarea {
-    width: -webkit-fill-available;
+    width: 100%;
     margin: 0 10%;
     resize: none;
     font-size: 1rem;
