@@ -135,7 +135,7 @@ canvas {
 #text p {
     width: fit-content;
     padding: 0 2rem 0 0.2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #161616;
     margin: 0;
     text-align: justify;
@@ -358,7 +358,7 @@ canvas {
 
 @media screen and (max-width: 1550px) {
     #text p {
-        font-size: 1.35rem;
+        font-size: 1.15rem;
     }
 
     .description p {
@@ -372,7 +372,7 @@ canvas {
     }
     
     #text p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .description p {
@@ -381,12 +381,6 @@ canvas {
 }
 
 @media screen and (max-width: 1150px) {
-    #text p {
-        font-size: 1.1rem;
-    }
-}
-
-@media screen and (max-width: 1100px) {
     h2 {
         font-size: 3rem;
     }
