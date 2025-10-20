@@ -334,6 +334,7 @@ canvas {
     border: none;
     width: 5.5rem;
     margin: 0 auto;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(98%) saturate(7071%) hue-rotate(231deg) brightness(100%) contrast(101%);
 }
 
 .details a {
@@ -347,11 +348,12 @@ canvas {
 }
 
 .details img:hover {
-    filter: invert(21%) sepia(55%) saturate(6751%) hue-rotate(305deg) brightness(101%) contrast(112%);
+    filter: brightness(0) saturate(100%) invert(19%) sepia(90%) saturate(7478%) hue-rotate(302deg) brightness(100%) contrast(101%) !important;
 }
 
-#pcworld {
-    border: 2px #161616 solid;
+.higher-project-visibility {
+    background-color: #f3f3f3;
+    border-radius: 35%;
 }
 
 /* Responsiveness */
@@ -370,17 +372,7 @@ canvas {
     .hard-element, .soft-element {
         flex-basis: 47%;
     }
-    
-    #text p {
-        font-size: 1rem;
-    }
 
-    .description p {
-        font-size: 1.2rem;
-    }
-}
-
-@media screen and (max-width: 1150px) {
     h2 {
         font-size: 3rem;
     }
@@ -440,6 +432,19 @@ canvas {
         transform: none;
     }
 
+    .description p {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .description h3 {
+        font-size: 2.3rem;
+        margin: .5rem 0;
+    }
+}
+
+@media screen and (max-width: 1150px) {
     .project-item {
         flex-direction: column;
         align-items: center;
@@ -460,7 +465,6 @@ canvas {
     .details img {
         width: 4.5rem;
         position: absolute;
-        opacity: 0.5;
         transform: translate(6.5rem, -4rem);
     }
 
@@ -471,21 +475,16 @@ canvas {
     .details img:hover {
         filter: none;
     }
-    
-
-    .description p {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .description h3 {
-        font-size: 2.3rem;
-        margin: .5rem 0;
-    }
 
     .project-item {
         width: 90%;
         margin: .5rem 5%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #text p {
+        font-size: 1.35rem;
+        padding: 0;
     }
 }
